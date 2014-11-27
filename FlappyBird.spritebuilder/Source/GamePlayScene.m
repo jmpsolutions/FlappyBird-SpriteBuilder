@@ -9,6 +9,8 @@
     // your code here
     character = (Character*)[CCBReader load:@"Character"];
     [physicsNode addChild:character];
+    //Agrega Obstaculos
+    [self addObstacle];
 }
 
 -(void)update:(CCTime)delta
@@ -22,11 +24,6 @@
     // this will get called every time the player touches the screen
     [character flap];
 }
-
-
-
-
-
 
 @end
 //To declare a method in Objective-C, follow the following format:
