@@ -303,8 +303,4 @@ CCParallaxNode *_parallaxBackground;
 }
 
 @end
-@end
-
-
-@end
 
