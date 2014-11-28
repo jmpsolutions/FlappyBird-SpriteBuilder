@@ -9,30 +9,37 @@
 #import "MainScene.h"
 #import "Obstacle.h"
 
+
+
+//parallax
+CGPoint _cloudParallaxRatio;
+CGPoint _bushParallaxRatio;
+
+CCNode *_parallaxContainer;
+CCParallaxNode *_parallaxBackground;
+
+
+@interface CGPointObject : NSObject
+{
+    CGPoint _ratio;
+    CGPoint _offset;
+    CCNode *__unsafe_unretained _child; // weak ref
+}
+@property (nonatomic,readwrite) CGPoint ratio;
+@property (nonatomic,readwrite) CGPoint offset;
+@property (nonatomic,readwrite,unsafe_unretained) CCNode *child;
++(id) pointWithCGPoint:(CGPoint)point offset:(CGPoint)offset;
+-(id) initWithCGPoint:(CGPoint)point offset:(CGPoint)offset;
+@end
+
+
+
+
+
 @implementation MainScene {
     
     
-    //parallax
-    CGPoint _cloudParallaxRatio;
-    CGPoint _bushParallaxRatio;
-    
-    CCNode *_parallaxContainer;
-    CCParallaxNode *_parallaxBackground;
-    
-    
-    @interface CGPointObject : NSObject
-    {
-        CGPoint _ratio;
-        CGPoint _offset;
-        CCNode *__unsafe_unretained _child; // weak ref
-    }
-    @property (nonatomic,readwrite) CGPoint ratio;
-    @property (nonatomic,readwrite) CGPoint offset;
-    @property (nonatomic,readwrite,unsafe_unretained) CCNode *child;
-    +(id) pointWithCGPoint:(CGPoint)point offset:(CGPoint)offset;
-    -(id) initWithCGPoint:(CGPoint)point offset:(CGPoint)offset;
-    @end
-    
+ 
     
     
     CCNode *_ground1;
