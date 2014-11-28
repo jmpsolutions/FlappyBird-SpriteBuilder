@@ -226,7 +226,7 @@ CCParallaxNode *_parallaxBackground;
                 }
             }
         }
-    
+    }
        
     
     _sinceTouch += delta;
